@@ -11,7 +11,10 @@ import salesRoutes from './src/routers/sales.js'
 import generalRoutes from './src/routers/general.js'
 import managementRoutes from './src/routers/management.js'
 import User from './src/model/User.js'
-import {dataUser} from './src/data/index.js'
+import Product from './src/model/Product.js'
+import ProductStat from './src/model/ProductStat.js'
+import Transaction from './src/model/Transaction.js'
+import {dataUser, dataProduct, dataProductStat, dataTransaction} from './src/data/index.js'
 /* CONFIGURATION */
 dotenv.config()
 
@@ -37,5 +40,8 @@ mongoose.connect(process.env.MONGOOSE_CONNECTION,{
     useUnifiedTopology: true
 }).then(()=>{
     app.listen(PORT, ()=> console.log('listen'))
-    User.insertMany(dataUser)
+    // User.insertMany(dataUser)
+    // Product.insertMany(dataProduct)
+    // ProductStat.insertMany(dataProductStat)
+    // Transaction.insertMany(dataTransaction)
 }).catch((error)=> console.error(error))
