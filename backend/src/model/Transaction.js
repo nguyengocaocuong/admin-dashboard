@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 
 const TransactionSchema = mongoose.Schema({
     userId: String,
-    const: String,
+    cont: String,
     products:{
         type: [mongoose.Types.ObjectId],
         of: Number

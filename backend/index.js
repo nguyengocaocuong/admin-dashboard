@@ -14,7 +14,8 @@ import User from './src/model/User.js'
 import Product from './src/model/Product.js'
 import ProductStat from './src/model/ProductStat.js'
 import Transaction from './src/model/Transaction.js'
-import {dataUser, dataProduct, dataProductStat, dataTransaction} from './src/data/index.js'
+import OverallStat from './src/model/OverallStat.js'
+import {dataUser, dataProduct, dataProductStat, dataTransaction, dataOverallStat} from './src/data/index.js'
 /* CONFIGURATION */
 dotenv.config()
 
@@ -40,8 +41,11 @@ mongoose.connect(process.env.MONGOOSE_CONNECTION,{
     useUnifiedTopology: true
 }).then(()=>{
     app.listen(PORT, ()=> console.log('listen'))
+
+    /* ONLY ADD DATA ONE TIME */
     // User.insertMany(dataUser)
     // Product.insertMany(dataProduct)
     // ProductStat.insertMany(dataProductStat)
+    // OverallStat.insertMany(dataOverallStat)
     // Transaction.insertMany(dataTransaction)
 }).catch((error)=> console.error(error))

@@ -12,11 +12,11 @@ const ProductStatSchema = mongoose.Schema({
             totalUnits:Number
         }
     ],
-    dailyData:{
+    dailyData:[{
         date:String,
         totalSales: Number,
         totalUnits: Number
-    }
+    }]
 }, { timestamps: true })
 const ProductStat = mongoose.model("ProductStat", ProductStatSchema)
 export default ProductStat
