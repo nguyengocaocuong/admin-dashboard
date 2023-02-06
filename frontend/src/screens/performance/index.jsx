@@ -9,7 +9,6 @@ import { useSelector } from 'react-redux'
 const Performance = () => {
     const userId = useSelector(state => state.global.userId)
     const { data, isLoading } = useGetPerformanceQuery(userId)
-    console.log(data)
     const theme = useTheme()
     const columns = [
         {
@@ -73,7 +72,7 @@ const Performance = () => {
             >
                 <DataGrid
                     loading={isLoading || !data}
-                    rows={data && data.sales|| []}
+                    rows={(data && data.sales) || []}
                     getRowId={(row) => row._id}
                     columns={columns}
                     components={{

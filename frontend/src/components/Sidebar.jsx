@@ -26,8 +26,7 @@ import {
     CalendarMonthOutlined,
     AdminPanelSettingsOutlined,
     TrendingUpOutlined,
-    PieChartOutline,
-    ChevronLeftOutlined
+    PieChartOutline
 } from "@mui/icons-material"
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
