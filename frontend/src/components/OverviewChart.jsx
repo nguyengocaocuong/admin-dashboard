@@ -103,6 +103,7 @@ const OverviewChart = ({ view, isDashboard = false }) => {
       axisLeft={{
         orient: 'left',
         tickSize: 5,
+        tickValues:5,
         tickPadding: 5,
         tickRotation: 0,
         legend: isDashboard ? "" : `Total ${view === 'sales' ? "Revenue" : "Units"} for year`,

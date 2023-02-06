@@ -1,8 +1,8 @@
 export const tokensDark = {
     grey: {
         0: "#ffffff",
-        10:"#f6f6f6",
-        50:"#f0f0f0",
+        10: "#f6f6f6",
+        50: "#f0f0f0",
         100: "#e0e0e0",
         200: "#c2c2c2",
         300: "#a3a3a3",
@@ -27,26 +27,26 @@ export const tokensDark = {
     },
     secondary: {
         50: "#f0f0f0",
-        100: "#fff6e0",
-        200: "#ffedc2",
-        300: "#ffe3a3",
-        400: "#ffda85",
-        500: "#ffd166",
-        600: "#191F45",
-        700: "#997d3d",
-        800: "#665429",
-        900: "#332a14"
+        100: "#cdf4e7",
+        200: "#9ae9cf",
+        300: "#68dfb8",
+        400: "#35d4a0",
+        500: "#03c988",
+        600: "#02a16d",
+        700: "#027952",
+        800: "#015036",
+        900: "#01281b"
     }
 }
-function reverseTokens(tokensDark){
+function reverseTokens(tokensDark) {
     const reverseTokens = {};
-    Object.entries(tokensDark).forEach(([key, val])=>{
+    Object.entries(tokensDark).forEach(([key, val]) => {
         const keys = Object.keys(val)
         const values = Object.values(val)
         const length = keys.length
         const reversedObj = {}
-        for(let i = 0; i < length; i++){
-            reversedObj[keys[i]] = values[length -i -1]
+        for (let i = 0; i < length; i++) {
+            reversedObj[keys[i]] = values[length - i - 1]
         }
         reverseTokens[key] = reversedObj
         return reverseTokens
@@ -54,77 +54,77 @@ function reverseTokens(tokensDark){
 }
 export const tokensLight = reverseTokens(tokensDark)
 
-export const themeSettings = (mode)=>{
+export const themeSettings = (mode) => {
     return {
-        palette:{
-            mode:mode,
+        palette: {
+            mode: mode,
             ...(mode === "dark" ?
-            {
-                primary:{
-                    ...tokensDark.primary,
-                    main: tokensDark.primary[400],
-                    light: tokensDark.primary[400]
-                },
-                secondary:{
-                    ...tokensDark.secondary,
-                    main: tokensDark.secondary[300]
-                },
-                neutral:{
-                    ...tokensDark.grey,
-                    main: tokensDark.grey[500]
-                }, 
-                background: {
-                    default: tokensDark.primary[600],
-                    alt: tokensDark.primary[500]
-                }
-            }:
-            {
-                primary:{
-                    ...tokensDark.primary,
-                    main: tokensDark.primary[50],
-                    light: tokensDark.primary[100]
-                },
-                secondary:{
-                    ...tokensDark.secondary,
-                    main: tokensDark.secondary[600],
-                    light: tokensDark.secondary[700]
-                },
-                neutral:{
-                    ...tokensDark.grey,
-                    main: tokensDark.grey[500]
-                }, 
-                background: {
-                    default: tokensDark.grey[0],
-                    alt: tokensDark.grey[50]
-                }   
-            })
+                {
+                    primary: {
+                        ...tokensDark.primary,
+                        main: tokensDark.primary[400],
+                        light: tokensDark.primary[400]
+                    },
+                    secondary: {
+                        ...tokensDark.secondary,
+                        main: tokensDark.secondary[300]
+                    },
+                    neutral: {
+                        ...tokensDark.grey,
+                        main: tokensDark.grey[500]
+                    },
+                    background: {
+                        default: tokensDark.primary[600],
+                        alt: tokensDark.primary[500]
+                    }
+                } :
+                {
+                    primary: {
+                        ...tokensDark.primary,
+                        main: tokensDark.primary[50],
+                        light: tokensDark.primary[100]
+                    },
+                    secondary: {
+                        ...tokensDark.secondary,
+                        main: tokensDark.secondary[600],
+                        light: tokensDark.secondary[700]
+                    },
+                    neutral: {
+                        ...tokensDark.grey,
+                        main: tokensDark.grey[500]
+                    },
+                    background: {
+                        default: tokensDark.grey[0],
+                        alt: tokensDark.grey[50]
+                    }
+                })
         },
-        typography:{
+        typography: {
             fontFamily: ["Inter", "sans-serif"].join(","),
-            fontSize:12,
-            h1:{
+            fontSize: 12,
+            h1: {
                 fontFamily: ["Inter", "sans-serif"].join(","),
-                fontSize:40,
+                fontSize: 40,
             },
-            h2:{
+            h2: {
                 fontFamily: ["Inter", "sans-serif"].join(","),
-                fontSize:32,
+                fontSize: 32,
             },
-            h3:{
+            h3: {
                 fontFamily: ["Inter", "sans-serif"].join(","),
-                fontSize:24,
+                fontSize: 24,
             },
-            h4:{
+            h4: {
                 fontFamily: ["Inter", "sans-serif"].join(","),
-                fontSize:20,
+                fontSize: 20,
             },
-            h5:{
+            h5: {
                 fontFamily: ["Inter", "sans-serif"].join(","),
-                fontSize:16,
+                fontSize: 16,
             },
-            h6:{
+            h6: {
                 fontFamily: ["Inter", "sans-serif"].join(","),
-                fontSize:14,
+                fontSize: 14,
             }
         }
     }
